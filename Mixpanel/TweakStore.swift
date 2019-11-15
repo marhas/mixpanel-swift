@@ -49,7 +49,7 @@ public final class TweakStore {
     }
 
     /// A method for adding Tweaks to the environment
-    func addTweaks(_ tweaks: [TweakClusterType]) {
+    public func addTweaks(_ tweaks: [TweakClusterType]) {
         self.allTweaks.formUnion(Set(tweaks.reduce(into: []) { $0.append(contentsOf: $1.tweakCluster) }))
         self.allTweaks.forEach { tweak in
             // Find or create its TweakCollection

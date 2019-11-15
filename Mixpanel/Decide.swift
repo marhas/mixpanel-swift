@@ -176,7 +176,7 @@ class Decide {
         completion(decideResponse)
     }
 
-    func connectToWebSocket(token: String, mixpanelInstance: MixpanelInstance, reconnect: Bool = false) {
+    open func connectToWebSocket(token: String, mixpanelInstance: MixpanelInstance, reconnect: Bool = false) {
         var oldInterval = 0.0
         let webSocketURL = "\(switchboardURL)/connect?key=\(token)&type=device"
         guard let url = URL(string: webSocketURL) else {

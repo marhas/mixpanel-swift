@@ -46,6 +46,11 @@ protocol AppLifecycle {
 /// The class that represents the Mixpanel Instance
 open class MixpanelInstance: CustomDebugStringConvertible, FlushDelegate, AEDelegate {
 
+    /// Expose the connectToWebSocket method 
+    open func connectToMixpanel() {
+        connectToWebSocket()
+    }
+
     /// The a MixpanelDelegate object that gives control over Mixpanel network activity.
     open var delegate: MixpanelDelegate?
 

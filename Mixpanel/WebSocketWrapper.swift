@@ -46,9 +46,11 @@ class WebSocketWrapper: WebSocketDelegate {
         open = false
         connected = false
         session = [String: Any]()
+        WebSocketWrapper.retries = 0
         self.url = url
         self.connectCallback = connectCallback
         self.disconnectCallback = disconnectCallback
+
 
         commandQueue = OperationQueue()
         commandQueue.maxConcurrentOperationCount = 1

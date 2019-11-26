@@ -46,11 +46,13 @@ protocol AppLifecycle {
 /// The class that represents the Mixpanel Instance
 open class MixpanelInstance: CustomDebugStringConvertible, FlushDelegate, AEDelegate {
 
+    #if DECIDE
     /// Expose the connectToWebSocket method 
-    open func connectToMixpanel() {
-        connectToWebSocket()
+    open func connectToMixpanel(reconnect: Bool  = true) {
+        connectToWebSocket(reconnect: reconnect)
     }
-
+    #endif
+    
     /// The a MixpanelDelegate object that gives control over Mixpanel network activity.
     open var delegate: MixpanelDelegate?
 
@@ -159,6 +161,13 @@ open class MixpanelInstance: CustomDebugStringConvertible, FlushDelegate, AEDele
     public let name: String
 
     #if DECIDE
+
+    open var connected: Bool {
+        get {
+            decideInstance.webSocketWrapper?.connected ?? false
+        }
+    }
+
     /// Controls whether to enable the visual editor for codeless on mixpanel.com
     /// You will be unable to edit codeless events with this disabled, however previously
     /// created codeless events will still be delivered.
@@ -1711,8 +1720,8 @@ extension MixpanelInstance: InAppNotificationsDelegate {
     }
     
     // MARK: - WebSocket
-    func connectToWebSocket() {
-        decideInstance.connectToWebSocket(token: apiToken, mixpanelInstance: self)
+    func connectToWebSocket(reconnect: Bool = false) {
+        decideInstance.connectToWebSocket(token: apiToken, mixpanelInstance: self, reconnect: reconnect)
     }
 
     // MARK: - Codeless

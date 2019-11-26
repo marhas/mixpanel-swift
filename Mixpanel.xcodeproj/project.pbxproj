@@ -733,7 +733,7 @@
 		E11594741CFF1491007F8B4F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Mixpanel;
 				TargetAttributes = {
 					86F86E80224404BD00B69832 = {
@@ -1199,7 +1199,7 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1253,7 +1253,7 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

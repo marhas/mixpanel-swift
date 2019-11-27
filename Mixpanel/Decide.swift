@@ -223,4 +223,7 @@ class Decide {
                                             disconnectCallback: disconnectCallback)
     }
 
+    open func disconnect() {
+        webSocketWrapper?.close()
+    }
 }

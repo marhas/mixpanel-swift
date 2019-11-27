@@ -51,6 +51,10 @@ open class MixpanelInstance: CustomDebugStringConvertible, FlushDelegate, AEDele
     open func connectToMixpanel(reconnect: Bool  = true) {
         connectToWebSocket(reconnect: reconnect)
     }
+
+    open func disconnectFromMixpanel() {
+        decideInstance.disconnect()
+    }
     #endif
     
     /// The a MixpanelDelegate object that gives control over Mixpanel network activity.

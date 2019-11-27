@@ -103,7 +103,7 @@ class WebSocketWrapper: WebSocketDelegate {
         }
     }
 
-    func close() {
+    public func close() {
         webSocket.disconnect()
         for value in session.values {
             if let value = value as? CodelessBindingCollection {
